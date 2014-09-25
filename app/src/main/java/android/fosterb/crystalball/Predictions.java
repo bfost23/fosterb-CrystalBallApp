@@ -1,5 +1,7 @@
 package android.fosterb.crystalball;
 
+import java.util.Random;
+
 /**
  * Created by Student on 9/8/2014.
  */
@@ -9,8 +11,13 @@ public class Predictions{
 
     private Predictions() {
         answers = new String[] {
+                "YES",
+                "NO",
+                "MAYBE",
                 "Your wishes will come true",
-                "Your wishes will NEVER be true"
+                "Your wishes will NEVER be true",
+                "The world may never know",
+                "Your mom knows"
         };
     }
 
@@ -21,6 +28,8 @@ public class Predictions{
         return predictions;
     }
     public String getPredictions() {
-        return answers[1];
+
+        Random prediction = new Random();
+        return answers[prediction.nextInt(7)];
     }
 }

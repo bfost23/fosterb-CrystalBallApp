@@ -39,7 +39,7 @@ public class CrystalBall extends Activity {
             previousAcceleration = currentAcceleration;
             currentAcceleration = FloatMath.sqrt(x * x + y * y + z * z);
             float delta = currentAcceleration - previousAcceleration;
-            acceleration = acceleration * 0.9f + delta;
+            acceleration = acceleration * 0.1f + delta;
 
             if(acceleration > 10){
                 MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.crystal_ball);
@@ -78,6 +78,8 @@ public class CrystalBall extends Activity {
         acceleration = 0.0f;
         currentAcceleration = SensorManager.GRAVITY_EARTH;
         previousAcceleration = SensorManager.GRAVITY_EARTH;
+        ImageView i = (ImageView) findViewById(R.id.ballAnimation);
+        i.setBackgroundResource(R.drawable.ball01);
     }
 
     @Override
