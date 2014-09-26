@@ -25,4 +25,5 @@
     <item android:drawable="@drawable/ball22" android:duration="50" />
     <item android:drawable="@drawable/ball23" android:duration="50" />
     <item android:drawable="@drawable/ball24" android:duration="50" />
+    //*set up the app to animate the crystal ball images
 </animation-list>

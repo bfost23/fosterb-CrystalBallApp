@@ -18,6 +18,7 @@ public class Predictions{
                 "Your wishes will NEVER be true",
                 "The world may never know",
                 "Your mom knows"
+                //*text for the different answers in the app
         };
     }
 
@@ -31,5 +32,6 @@ public class Predictions{
 
         Random prediction = new Random();
         return answers[prediction.nextInt(7)];
+        //*randomizes the answers
     }
 }

@@ -39,16 +39,17 @@ public class CrystalBall extends Activity {
             previousAcceleration = currentAcceleration;
             currentAcceleration = FloatMath.sqrt(x * x + y * y + z * z);
             float delta = currentAcceleration - previousAcceleration;
-            acceleration = acceleration * 0.1f + delta;
-
+            acceleration = acceleration * 0.9f + delta;
+            //* adding the accelerometer
             if(acceleration > 10){
+            //*checking how hard the accelerometer was shaken
                 MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.crystal_ball);
                 mediaPlayer.start();
-
-                answerText = (TextView) findViewById(R.id.answerText);
-                answerText.setText(Predictions.get().getPredictions());
-                answerText.startAnimation(AnimationUtils.loadAnimation(CrystalBall.this, android.R.anim.fade_in));
-
+            //*Adding the animation sound the the ball shakes
+                    answerText = (TextView) findViewById(R.id.answerText);
+                    answerText.setText(Predictions.get().getPredictions());
+                    answerText.startAnimation(AnimationUtils.loadAnimation(CrystalBall.this, android.R.anim.fade_in));
+            //*adding the text in and animating the text also
                 ImageView i = (ImageView) findViewById(R.id.ballAnimation);
                 i.setBackgroundResource(R.drawable.animation);
 
@@ -57,7 +58,10 @@ public class CrystalBall extends Activity {
             if(pro.isRunning()){
                 pro.stop();
                 pro.start();
+            }else{
+                pro.start();
             }
+            //*Animating the crystal ball
             }
         }
 
